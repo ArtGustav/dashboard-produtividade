@@ -56,3 +56,10 @@ const CONFIG_STORAGE_KEY = "tarefas";
 - Adicionar exportacao de relatorios (CSV/PDF).
 - Integrar com backend/API para dados em tempo real.
 - Criar autenticacao e permissao por perfil.
+
+## Autor
+
+Gustavo Nascimento  
+Estudante de Ciência da Computação
+
+GitHub: https://github.com/ArtGustav

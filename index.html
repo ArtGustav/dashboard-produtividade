@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard de Produtividade</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="container">
+      <h1>Dashboard de Produtividade</h1>
+      <p>Painel com metricas, graficos e resumo de itens salvos no localStorage.</p>
+    </div>
+  </header>
+
+  <main class="container painel">
+    <section class="cards-metricas" aria-label="Metricas principais">
+      <article class="card-metrica">
+        <h2>Total de itens</h2>
+        <p id="metrica-total">0</p>
+      </article>
+      <article class="card-metrica">
+        <h2>Pendentes</h2>
+        <p id="metrica-pendentes">0</p>
+      </article>
+      <article class="card-metrica">
+        <h2>Em andamento</h2>
+        <p id="metrica-andamento">0</p>
+      </article>
+      <article class="card-metrica">
+        <h2>Concluidos</h2>
+        <p id="metrica-concluidos">0</p>
+      </article>
+      <article class="card-metrica">
+        <h2>Alta prioridade</h2>
+        <p id="metrica-alta">0</p>
+      </article>
+    </section>
+
+    <section class="controles" aria-label="Controles de filtro e atualizacao">
+      <label for="periodo">Periodo</label>
+      <select id="periodo" name="periodo">
+        <option value="7">7 dias</option>
+        <option value="30">30 dias</option>
+        <option value="todos">Todos</option>
+      </select>
+      <button id="btn-atualizar" type="button">Atualizar</button>
+      <button id="btn-seed" type="button">Gerar dados de exemplo</button>
+    </section>
+
+    <p id="mensagem-estado" class="mensagem-estado" role="status" aria-live="polite"></p>
+
+    <section class="graficos" aria-label="Visualizacoes do painel">
+      <article class="card-grafico">
+        <h2>Status</h2>
+        <div class="grafico-wrapper">
+          <canvas id="grafico-status"></canvas>
+        </div>
+      </article>
+      <article class="card-grafico">
+        <h2>Prioridade</h2>
+        <div class="grafico-wrapper">
+          <canvas id="grafico-prioridade"></canvas>
+        </div>
+      </article>
+      <article class="card-grafico card-linha">
+        <h2>Itens criados por dia</h2>
+        <div class="grafico-wrapper">
+          <canvas id="grafico-linha"></canvas>
+        </div>
+      </article>
+    </section>
+
+    <section class="tabela-resumo" aria-label="Tabela resumida">
+      <div class="titulo-secao">
+        <h2>Tabela resumida</h2>
+        <p>Mostrando ate 10 itens mais recentes.</p>
+      </div>
+      <div class="wrapper-tabela">
+        <table>
+          <thead>
+            <tr>
+              <th>Titulo / Assunto</th>
+              <th>Status</th>
+              <th>Prioridade</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody id="tabela-corpo">
+            <tr>
+              <td colspan="4">Carregando dados...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
